@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+</h:head>
+
+<h:body>
+	<h1>Veri Çizelgesi</h1>
+	<h:form>
+		<p:dataTable value="#{dataBean.dataList}" var="data" paginator="true" rows="20" rowsPerPageTemplate="5, 10, 15">
+			<p:column headerText="Veri Id" sortBy="#{data.dataId}">
+				<p:outputLabel value="#{data.dataId}"/>
+			</p:column>
+			<p:column headerText="Veri Adı" sortBy="#{data.dataNamr}">
+				<p:outputLabel value="#{data.dataName}"/>
+			</p:column>
+			<p:column headerText="Veri Değeri" sortBy="#{data.dataValue}">
+				<p:outputLabel value="#{data.dataValue}"/>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

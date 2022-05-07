@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+	i18n Internationalization Uluslararasılaştırma<br/>
+	l10n Localization Yerelleştirme<br/>
+	<h:form>
+		<h1>Şimdiki Yerellik</h1>
+		Dil: <h:outputText value="#{localeBean.currentLocale.language}"/><br/>
+		Ülke: <h:outputText value="#{localeBean.currentLocale.country}"/><br/>
+		Gösterge Dil: <h:outputText value="#{localeBean.currentLocale.displayLanguage}"/><br/>
+		Gösterge Ülkesi: <h:outputText value="#{localeBean.currentLocale.displayCountry}"/><br/><br/>
+		
+		Yerellik Seçimi:
+		<h:selectOneMenu value="#{localeBean.localeCode}">
+		<f:selectItems value="#{localeBean.localeList}" var="locale" 
+			itemLabel="#{locale.displayLanguage} #{locale.displayCountry}"
+			itemValue="#{locale.language} #{locale.displayCountry}"/>
+		</h:selectOneMenu><br/><br/>
+		
+		<h:commandButton value="Yerelliği Değiştir" action="#{localeBean.changeLocale}"/><br/><br/>
+
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h1>Ana Sayfa</h1>
+	<h:form>
+		Dolaylı Gezinme: 
+		<h:commandLink action="#{explicitBean.go}">
+			Dolaylı Git
+		</h:commandLink><br/><br/>
+		Doğrudan Gezinme: 
+		<h:commandLink action="success">
+			Doğrudan Git
+		</h:commandLink><br/><br/>
+		Mesajlar:
+		<h:messages/><br/><br/>
+		İnput String:
+		<h:inputText value="#{explicitBean.inputString}"/><br/><br/>
+		Başar ya da Kal:
+		<h:commandLink action="#{explicitBean.successedOrStay}">
+			Tıkla, Gör
+		</h:commandLink><br/><br/>
+		Mesajlar:
+		<h:messages/><br/><br/>
+		İnput String:
+		<h:inputText value="#{explicitBean.inputString}"/><br/><br/>
+		Başar ya da Başarma:
+		<h:commandLink action="#{explicitBean.successedOrFail}">
+			Tıkla, Gör
+		</h:commandLink><br/><br/>
+		Koşullu Gezinme:
+		<h:commandLink action="#{explicitBean.perform}">
+			Koşullu Geç
+		</h:commandLink><br/><br/>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h1>Durum Sayfası</h1>
+	<h:form>
+		Durum: #{stateBean.currentState}<br/><br/>
+		<h:outputLabel value="Etkin" rendered="#{stateBean.currentState}"/>
+		<h:outputLabel value="Pasif" rendered="#{not stateBean.currentState}"/>
+		<br/>
+		Durum Değiştirme:<br/><br/>
+		<h:commandButton value="Etkinleştir" action="#{stateBean.setStateOn}"/><br/><br/>
+		<h:commandButton value="Paşifleştir" action="#{stateBean.setStateOff}"/><br/><br/>
+	</h:form>
+</h:body>
+</html>

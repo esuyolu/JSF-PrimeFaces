@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+	<h1>Ajax Seçim (Selection)</h1>
+	<h:form id="myForm">
+		Ülke Seçimi:
+		<h:selectOneMenu id="myCountries" value="#{adaptiveBean.countryId}">
+			<f:selectItem itemValue="0" itemLabel="---Seç---"/>
+			<f:selectItems value="#{adaptiveBean.countryList}" var="country"
+				itemValue="#{country.countryId}"
+			 	itemLabel="#{country.countryName}"/>
+			 <f:ajax event="change" render="myProvinces myCountry"/>
+		</h:selectOneMenu><br/><br/>
+		
+		İl Seçimi:
+		<h:selectOneMenu id="myProvinces" value="#{adaptiveBean.provinceId}">
+			<f:selectItem itemValue="0" itemLabel="---Seç---"/>
+			<f:selectItems value="#{adaptiveBean.provinceList}" var="province"
+				itemValue="#{province.provinceId}"
+			 	itemLabel="#{province.provinceName}"/>
+			 <f:ajax event="change" execute="@form" render="myProvince"/>
+		</h:selectOneMenu><br/><br/>
+		
+		Seçilen Ülke:
+		<h:outputText id="myCountry" value="#{adaptiveBean.country.countryName}"/><br/><br/>
+		
+		Seçilen İl:
+		<h:outputText id="myProvince" value="#{adaptiveBean.province.provinceName}"/><br/><br/>
+	</h:form>
+</h:body>
+</html>

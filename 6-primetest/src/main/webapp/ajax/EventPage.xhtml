@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h1>Event Page</h1>
+	<h:form>
+		<p:inputText value="#{eventBean.keyText}">
+			<p:ajax event="keyup" update="keyOutput"/>
+		</p:inputText><br/><br/>
+		<h:outputText id="keyOutput" value="#{eventBean.keyText}"/><br/><br/>
+		
+		<p:inputText value="#{eventBean.blurText}">
+			<p:ajax event="blur" update="blurOutput"/>
+		</p:inputText><br/><br/>
+		<h:outputText id="blurOutput" value="#{eventBean.blurText}"/><br/><br/>
+	</h:form>
+</h:body>
+</html>

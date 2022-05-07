@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+	<h:form>
+		<!-- <f:loadBundle basename="com.esuyolu.jsfpaging.bundle.SeveralMessages" var="severalMessage"></f:loadBundle>  -->
+		<h:outputText value="#{severalMessage['message.one']}"/><br/>
+		<p>
+			<h:outputText value="#{severalMessage['message.two']}" escape="false"/>
+		</p>
+		<p>
+			<h:outputFormat value="#{severalMessage['message.three']}">
+				<f:param value="Esma"/>
+				<f:param value="Suyolu"/>
+			</h:outputFormat>
+		</p>
+		<p>
+			<h:outputFormat value="#{severalMessage['message.three']}">
+				<f:param value="#{messageBean.firstName}"/>
+				<f:param value="#{messageBean.lastName}"/>
+			</h:outputFormat>
+		</p>
+	</h:form>
+</h:body>
+</html>

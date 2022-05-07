@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h1>Dinleyici</h1>
+	<h:form>
+		Konu:
+		<p:selectOneMenu value="#{listenerBean.subject}">
+			<f:selectItems value="#{listenerBean.subjectList}"/>
+			<p:ajax update="selectedSubject selectedSubSubject" listener="#{listenerBean.handleSubjectChange}"/>
+		</p:selectOneMenu><br/><br/>
+		Seçilen:
+		<h:outputText id="selectedSubject" value="#{listenerBean.subject}"/><br/><br/>
+		Seçilen Alt Konular:
+		<h:outputText id="selectedSubSubject" value="#{listenerBean.subSubject}"/><br/><br/>
+	</h:form>
+</h:body>
+</html>
