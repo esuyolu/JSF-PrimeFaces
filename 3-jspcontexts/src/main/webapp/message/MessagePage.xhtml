@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h1>İleti</h1>
+	<h:form id="myForm">
+		<h:messages showDetail="true" infoStyle="color:blue"/>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Sicim Değeri"/>
+			<h:inputText id="myString" value="#{messageBean.stringValue}"/>
+			<h:message for="myString" errorStyle="color:red"/>
+			
+			<h:outputLabel value="Sayı Değeri"/>
+			<h:inputText id="myDouble" value="#{messageBean.doubleValue}"/>
+			<h:message for="myDouble" errorStyle="color:red"/>
+			
+			<h:commandButton value="Süreçle" action="#{messageBean.process}"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

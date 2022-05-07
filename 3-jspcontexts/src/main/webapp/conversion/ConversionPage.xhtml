@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h1>Çevrim</h1>
+	<h:form>
+		<h:messages/>
+		long value: 
+		<h:inputText value="#{conversionBean.longValue}">
+			<!-- <f:convertNumber type="number" pattern="#000000"/>  -->
+			<f:convertNumber type="number" minIntegerDigits="6" groupingUsed="true"/> 
+		</h:inputText>
+		<br/>
+		double value: 
+		<h:inputText value="#{conversionBean.doubleValue}">
+			<f:convertNumber type="number" minIntegerDigits="6" maxFractionDigits="2" locale="tr_TR"/> 
+		</h:inputText>
+		<br/>
+		date value: 
+		<h:inputText value="#{conversionBean.dateValue}">
+			<f:convertDateTime type="both" pattern="dd.MM.yyyy HH:mm:ss"/> 
+		</h:inputText>
+		<br/>
+		email:
+		<h:inputText value="#{conversionBean.emailAddress}" converterMessage="e-postayı doğru giriniz.">
+			<f:converter converterId="emailConverter"/>
+		</h:inputText>
+		<br/>
+		<h:commandButton value="do" action="#{conversionBean.perform}"/>
+	</h:form>
+</h:body>
+</html>

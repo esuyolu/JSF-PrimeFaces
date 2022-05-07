@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h1>Dışavurum</h1>
+	<h:form>
+		Bileşenli: <h:outputText value="#{expressBean.expressId}"/><br/>
+		Bileşensiz: #{expressBean.expressName}<br/>
+		Çok adalgılı: <h:outputText value="#{expressBean.expressName} #{expressBean.expressValue}"/><br/>
+		Beklemeli: <h:outputText value="#{expressBean.expressId}"/><br/>
+		Beklemesiz: <h:outputText value="${expressBean.expressId}"/><br/><br/>
+		
+		Ayraçsız: <h:commandButton value="bas" action="#{expressBean.myMethod}"/><br/>
+		Ayraçlı: <h:commandButton value="bas" action="#{expressBean.myMethod()}"/><br/>
+		Değiştirgenli: <h:commandButton value="bas" action="#{expressBean.myMethod(3.1415)}"/><br/>
+		Değiştirgenli: <h:commandButton value="bas" action="#{expressBean.myMethod(expressBean.expressValue)}"/><br/><br/>
+		
+		Nesneli: <h:outputText value="${expressBean.sample.sampleName}"/><br/>
+		Dizgeli: <h:outputText value="${expressBean.stringList[1]}"/><br/>
+		Nesne Dizgeli: <h:outputText value="${expressBean.sampleList[1].sampleName}"/><br/>
+	</h:form>
+</h:body>
+</html>

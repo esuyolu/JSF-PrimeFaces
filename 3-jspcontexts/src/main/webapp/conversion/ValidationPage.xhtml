@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h1>Geçerleme</h1>
+	<h:form>
+		<h:messages showDetail="true"/>
+		long value: 
+		<h:inputText value="#{validationBean.longValue}" required="true" requiredMessage="gerekli değer girilmeli." validatorMessage="long sayının değeri en az 4 en çok 6 olabilir.">
+			<f:validateLongRange minimum="2" maximum="6"/>
+		</h:inputText>
+		<br/>
+		double value: 
+		<h:inputText value="#{validationBean.doubleValue}">
+		</h:inputText>
+		<br/>
+		string value:
+		<h:inputText value="#{validationBean.stringValue}" validatorMessage="stringin boyu en az 4 en çok 10 olabilir.">
+			<f:validateLength minimum="4" maximum="10"/>
+		</h:inputText>
+		<br/>
+		required value:
+		<h:inputText value="#{validationBean.requiredValue}" required="true" requiredMessage="gerekli değer girilmeli">
+		</h:inputText>
+		<br/>
+		phoneNumber value:
+		<h:inputText value="#{validationBean.phoneNumber}" validatorMessage="telefon numarası geçerli değil.">
+			<f:validateRegex pattern="^(0(\d{3}) (\d{3}) (\d{2}) (\d{2}))"/>
+		</h:inputText>
+		<br/>
+		email value:
+		<h:inputText value="#{validationBean.emailAddress}">
+			<f:validator validatorId="emailValidator"/>
+		</h:inputText>
+		<br/>
+		<h:commandButton value="do" action="#{validationBean.perform}"/>
+	</h:form>
+</h:body>
+</html>

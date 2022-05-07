@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h:form>
+		<h:dataTable value="#{gridBean.dataList}" var="data" border="1">
+			<h:column>
+				<f:facet name="header">
+					<h:outputLabel value="veri id" />
+				</f:facet>
+				<h:outputText value="#{data.dataId}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputLabel value="veri adı" />
+				</f:facet>
+				<h:outputText value="#{data.dataName}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputLabel value="veri degeri" />
+				</f:facet>
+				<h:outputText value="#{data.dataValue}" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

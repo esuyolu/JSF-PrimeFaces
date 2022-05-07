@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config 
+  version="2.2"
+  xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+  <application>
+    
+
+  </application>
+  
+  <managed-bean>
+  	<managed-bean-name>exampleBean</managed-bean-name>
+  	<managed-bean-class>com.esuyolu.jsfbean.config.ExampleBean</managed-bean-class>
+  	<managed-bean-scope>request</managed-bean-scope>
+  	<managed-property>
+  		<property-name>mySecond</property-name>
+  		<value>ikinci deger</value>
+  	</managed-property>
+  </managed-bean>
+ 
+ <!--  
+ 
+   <managed-bean>
+  	<managed-bean-name>clientBean</managed-bean-name>
+  	<managed-bean-class>com.esuyolu.jsfbean.config.ClientBean</managed-bean-class>
+  	<managed-bean-scope>request</managed-bean-scope>
+  	<managed-property>
+  		<property-name>serviceBean</property-name>
+  		<value>#{serviceBean}</value>
+  	</managed-property>
+  </managed-bean>
+  
+  <managed-bean>
+  	<managed-bean-name>serviceBean</managed-bean-name>
+  	<managed-bean-class>com.esuyolu.jsfbean.config.ServiceBean</managed-bean-class>
+  	<managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+ -->
+
+</faces-config>

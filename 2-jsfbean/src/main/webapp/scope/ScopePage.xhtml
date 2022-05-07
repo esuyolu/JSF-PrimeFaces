@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:body>
+	<h:form>
+		İstek Kapsamı: <h:outputText value="#{myRequestBean.myProperty}"/><br/>
+		<h:commandLink value="arttır" action="#{myRequestBean.increment}"/><br/>
+	</h:form>
+	<hr/>
+	<h:form>
+		Görünüm Kapsamı: <h:outputText value="#{myViewBean.myProperty}"/><br/>
+		<h:commandLink value="arttır" action="#{myViewBean.increment}"/><br/>
+	</h:form>
+	<hr/>
+	<h:form>
+		Oturum Kapsamı: <h:outputText value="#{mySessionBean.myProperty}"/><br/>
+		<h:commandLink value="arttır" action="#{mySessionBean.increment}"/><br/>
+	</h:form>
+	<hr/>
+	<h:form>
+		Uygulama Kapsamı: <h:outputText value="#{myApplicationBean.myProperty}"/><br/>
+		<h:commandLink value="arttır" action="#{myApplicationBean.increment}"/><br/>
+	</h:form>
+</h:body>
+</html>
